@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+
+    var cartas = [
+        { valor: '5', naipe: 'Paus' },
+        { valor: '6', naipe: 'Paus' },
+        { valor: '7', naipe: 'Paus' },
+        { valor: 'Q', naipe: 'Paus' },
+        { valor: 'J', naipe: 'Paus' },
+        { valor: 'K', naipe: 'Paus' },
+        { valor: 'A', naipe: 'Paus' },
+        { valor: '2', naipe: 'Paus' },
+        { valor: '3', naipe: 'Paus' },
+        { valor: '4', naipe: 'Espadas' },
+        { valor: '5', naipe: 'Espadas' },
+        { valor: '6', naipe: 'Espadas' },
+        { valor: '7', naipe: 'Espadas' },
+        { valor: 'Q', naipe: 'Espadas' },
+        { valor: 'J', naipe: 'Espadas' },
+        { valor: 'K', naipe: 'Espadas' },
+        { valor: '2', naipe: 'Espadas' },
+        { valor: '3', naipe: 'Espadas' },
+        { valor: '4', naipe: 'Copas' },
+        { valor: '5', naipe: 'Copas' },
+        { valor: '6', naipe: 'Copas' },
+        { valor: 'Q', naipe: 'Copas' },
+        { valor: 'J', naipe: 'Copas' },
+        { valor: 'K', naipe: 'Copas' },
+        { valor: 'A', naipe: 'Copas' },
+        { valor: '2', naipe: 'Copas' },
+        { valor: '3', naipe: 'Copas' },
+        { valor: '4', naipe: 'Ouros' },
+        { valor: '5', naipe: 'Ouros' },
+        { valor: '6', naipe: 'Ouros' },
+        { valor: 'Q', naipe: 'Ouros' },
+        { valor: 'J', naipe: 'Ouros' },
+        { valor: 'K', naipe: 'Ouros' },
+        { valor: 'A', naipe: 'Ouros' },
+        { valor: '2', naipe: 'Ouros' },
+        { valor: '3', naipe: 'Ouros' },
+        { valor: '7', naipe: 'Ouros', manilha: 'sim' },
+        { valor: 'A', naipe: 'Espadas', manilha: 'sim' },
+        { valor: '7', naipe: 'Copas', manilha: 'sim' },
+        { valor: '4', naipe: 'Paus', manilha: ' sim' }
+    ];
+
+    var sequencia_cartas = [
+        { valor: '4' },
+        { valor: '5' },
+        { valor: '6' },
+        { valor: '7' },
+        { valor: 'Q' },
+        { valor: 'J' },
+        { valor: 'K' },
+        { valor: 'A' },
+        { valor: '2' },
+        { valor: '3' },
+        { valor: '7', naipe: 'Ouros', manilha: 'sim' },
+        { valor: 'A', naipe: 'Espadas', manilha: 'sim' },
+        { valor: '7', naipe: 'Copas', manilha: 'sim' },
+        { valor: '4', naipe: 'Paus', manilha: ' sim' }
+    ];
+
+    // Função para embaralhar o array de cartas
+    function embaralharCartas(cartas) {
+        // Para cada carta no array de cartas
+        for (var i = cartas.length - 1; i > 0; i--) {
+            // Escolha um índice aleatório entre 0 e i
+            var j = Math.floor(Math.random() * (i + 1));
+            // Troque a posição da carta atual com a carta escolhida aleatoriamente
+            [cartas[i], cartas[j]] = [cartas[j], cartas[i]];
+        }
+    }
+
+    // teste.
+    var cartasEmbaralhadas = embaralharCartas(cartas);
+    console.log(cartasEmbaralhadas);
+
+    // distribuição.
+    function distribuir_cartas(jogador) {
+        if (jogador.cartas_jogador.length == 0) {
+            var cartas_jogador = cartas.splice(0, 3);
+            jogador.cartas_jogador = cartas_jogador;
+        } else {
+            alert("O jogador já tem cartas");
+        }
+    }
+
+    function jogar() {
+        var jogada1 = 0;
+        var jogada2 = 0;
+    }
+    
+    function resultado_turno(j1, j2) {
+        for (var i = 0; i < sequencia_cartas.length - 1; i++) {
+            if (sequencia_cartas.indexOf(j1) == i) {
+                console.log('deu certo');
+            }
+        }
+        
+    }
+
+
+
+
+
+    var jogador1 = {
+        pontuação: 0,
+        cartas_jogador: [],
+        truco: false,
+        seis: false,
+        nove: false,
+        doze: false
+    }
+
+    var jogador2 = {
+        pontuação: 0,
+        cartas_jogador: [],
+        truco: false,
+        seis: false,
+        nove: false,
+        doze: false
+    }
+
+
+
+
+
+
+
+
+
+
+
+</script>
